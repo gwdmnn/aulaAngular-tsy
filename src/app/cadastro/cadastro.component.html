@@ -1,0 +1,38 @@
+<hr>
+<h2>Cadastro de Contato</h2>
+<div class="container">
+    <form action="" #f="ngForm" (ngSubmit)="enviar(f.value)">
+        <label for="idNome">Nome</label>
+        <input type="text" ngModel name="nome" id="" placeholder="Informe nome" class="form-control">
+
+        <label for="idEmail">Email</label>
+        <input type="text" ngModel name="email" id="" placeholder="Informe email" class="form-control">
+
+        <label for="idFone">Telefone:</label>
+        <input type="text" ngModel name="fone" id="" placeholder="Informe telefone" class="form-control">
+        
+        <button class="btn btn-outline-primary mt-3">Salvar</button>
+    </form>
+
+    <h1 class="text-center mt-2">Lista de contatos</h1>
+    <table class="table">
+        <thead style="text-align: center;">
+            <tr>
+                <td>Nome</td>
+                <td>Email</td>
+                <td>Telefone</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ct of listaContatos">
+                <td>{{ct.nome}}</td>
+                <td>{{ct.email}}</td>
+                <td>{{ct.fone}}</td>
+                <td>
+                    <a [routerLink]="['/editar',ct.email]">Editar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

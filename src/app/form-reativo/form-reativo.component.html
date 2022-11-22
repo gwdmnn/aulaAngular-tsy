@@ -1,0 +1,26 @@
+<h1>Formulario reativo com form control</h1>
+<form action="">
+    <label for="idNome">Nome</label>
+    <input type="text" [formControl]="nome" id="idNome">
+
+    <button (click)="enviar()">Salvar</button>
+</form>
+<br>
+<p>{{nome.value}}</p>
+
+<h1>Formulario de controle com agrupamento de controles</h1>
+<form [formGroup]="formContato" action="">
+    <label for="idNome">Nome</label>
+    <input type="text" formControlName="nome" id="idNome">
+
+    <label for="idEmail">Email</label>
+    <input type="text" formControlName="email" id="idEmail">
+
+    <label for="idFone">Telefone</label>
+    <input type="text" formControlName="fone" id="idFone">
+
+</form>
+
+<p>{{formContato.value.nome}}</p>
+<p>{{formContato.value.email}}</p>
+<p>{{formContato.value.fone}}</p>

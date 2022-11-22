@@ -1,0 +1,28 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "augusto",
+      "email": "augusto@gmail.com",
+      "fone": "(47)9087-0987"
+    },
+    {
+      "nome": "Guilherme",
+      "email": "guilherme@email.com",
+      "fone": "(47) 99999-9999",
+      "id": 2
+    },
+    {
+      "nome": "Gustavo",
+      "email": "gustavo@email.com",
+      "fone": "(47) 99999-9999",
+      "id": 3
+    },
+    {
+      "nome": "Guilherme",
+      "email": "guilherme@email.com",
+      "fone": "(47) 99999-9999",
+      "id": 4
+    }
+  ]
+}

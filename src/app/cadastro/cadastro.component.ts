@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
+import { CadastroService } from '../cadastro.service';
+import Icontato from "../../interfaces/interface"
 
-interface Icontato{
-  nome: String,
-  email: String,
-  fone: String;
-}
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -12,13 +10,24 @@ interface Icontato{
 })
 export class CadastroComponent {
   listaContatos: Icontato[] = [];
+  msg: String = '';
 
-  constructor(){
+  constructor(private service:CadastroService){
+    this.consultar();
   }
 
   enviar(dados:Icontato){
-    this.listaContatos.push(dados)
+    //this.listaContatos.push(dados)
+    this.service.salvar(dados).subscribe(data => {
+      this.msg = "Registro inserido com sucesso";
+      
+      this.listaContatos = [...this.listaContatos, data]
+    })
 
+  }
+
+  consultar(){
+    this.service.consultar().subscribe(data => this.listaContatos = data);
   }
 
 }
